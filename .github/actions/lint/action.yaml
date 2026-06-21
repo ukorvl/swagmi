@@ -45,6 +45,10 @@ runs:
       run: pnpm run lint:md-links
       shell: bash
 
+    - name: Enforce fixed dependency versions and catalog usage
+      run: pnpm run lint:deps
+      shell: bash
+
     - name: Check for unused files, dependencies, and exports
       run: pnpm run knip
       shell: bash

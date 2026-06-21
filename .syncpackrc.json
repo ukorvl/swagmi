@@ -1,0 +1,38 @@
+{
+  "semverGroups": [
+    {
+      "dependencies": ["$LOCAL"],
+      "dependencyTypes": ["prod", "dev"],
+      "isIgnored": true,
+      "label": "Ignore local workspace references"
+    },
+    {
+      "dependencyTypes": ["pnpmCatalog"],
+      "label": "Use exact versions in the pnpm catalog",
+      "range": ""
+    },
+    {
+      "isIgnored": true,
+      "label": "Ignore other semver groups"
+    }
+  ],
+  "source": ["package.json"],
+  "sourceMode": "extend",
+  "versionGroups": [
+    {
+      "dependencies": ["$LOCAL"],
+      "dependencyTypes": ["prod", "dev"],
+      "label": "Use workspace protocol for local prod and dev dependencies",
+      "pinVersion": "workspace:*"
+    },
+    {
+      "dependencyTypes": ["prod", "dev"],
+      "label": "Use the pnpm catalog for external prod and dev dependencies",
+      "policy": "catalog"
+    },
+    {
+      "isIgnored": true,
+      "label": "Ignore other dependency types"
+    }
+  ]
+}
