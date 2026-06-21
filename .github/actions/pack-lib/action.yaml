@@ -1,0 +1,47 @@
+name: "Pack lib tarball"
+description: "Prepare artifacts directory and pack the lib workspace into a tarball"
+
+inputs:
+  artifacts-dir:
+    description: "Directory where tarball artifacts should be written"
+    required: false
+    default: "artifacts"
+
+outputs:
+  tarball-path:
+    description: "Path to the packed lib tarball"
+    value: ${{ steps.pack-lib.outputs.tarball_path }}
+
+runs:
+  using: "composite"
+  steps:
+    - name: Prepare artifacts directory
+      shell: bash
+      run: mkdir -p "${INPUTS_ARTIFACTS_DIR}"
+      env:
+        INPUTS_ARTIFACTS_DIR: ${{ inputs.artifacts-dir }}
+
+    - name: Pack library tarball
+      id: pack-lib
+      shell: bash
+      run: |
+        TARBALL_PATH=$(
+          pnpm -C lib pack --pack-destination "../${INPUTS_ARTIFACTS_DIR}" --json \
+            | jq -r 'if type == "array" then .[0].filename else .filename end'
+        )
+
+        if [[ -z "${TARBALL_PATH}" || "${TARBALL_PATH}" == "null" ]]; then
+          echo "No tarball filename in pnpm pack --json output" >&2
+          exit 1
+        fi
+
+        echo "tarball_path=${TARBALL_PATH}" >> "${GITHUB_OUTPUT}"
+
+        if [[ ! -f "${TARBALL_PATH}" ]]; then
+          echo "Packed tarball not found at ${TARBALL_PATH}" >&2
+          exit 1
+        fi
+
+        ls -la "${INPUTS_ARTIFACTS_DIR}"
+      env:
+        INPUTS_ARTIFACTS_DIR: ${{ inputs.artifacts-dir }}

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "paths": {
+      "@": ["./src"],
+      "@/*": ["./src/*"]
+    }
+  },
+  "extends": "../tsconfig.json",
+  "include": [
+    "src",
+    "tests",
+    "**.ts",
+    "**.tsx",
+    "package.json"
+  ]
+}

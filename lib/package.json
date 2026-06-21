@@ -1,0 +1,59 @@
+{
+  "name": "typescript-library-template",
+  "version": "0.0.1",
+  "description": "Template TypeScript library package",
+  "homepage": "https://github.com/your-org/typescript-library-template",
+  "bugs": {
+    "url": "https://github.com/your-org/typescript-library-template/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-org/typescript-library-template.git",
+    "directory": "lib"
+  },
+  "license": "MIT",
+  "author": "Template Maintainers <maintainers@example.com>",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/typescript-library-template.mjs",
+      "default": "./dist/typescript-library-template.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "dist/typescript-library-template.mjs",
+  "unpkg": "dist/typescript-library-template.umd.js",
+  "module": "dist/typescript-library-template.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "lint:exports": "npm_config_cache=.npm-cache attw --pack . --ignore-rules=cjs-resolves-to-esm",
+    "publint": "publint --strict",
+    "test": "vitest run --config vitest.config.ts --coverage",
+    "typecheck": "tsc --noEmit --project tsconfig.json",
+    "verify:package": "pnpm run build && pnpm run lint:exports && pnpm run publint && pnpm run verify:tarball",
+    "verify:tarball": "bash ../scripts/verify-tarball.sh"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@vitest/coverage-v8": "catalog:",
+    "camelcase": "catalog:",
+    "magic-string": "catalog:",
+    "publint": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-circular-dependency": "catalog:",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "catalog:"
+  },
+  "publishConfig": {
+    "provenance": true,
+    "registry": "https://registry.npmjs.org/"
+  }
+}

@@ -1,0 +1,19 @@
+name: "TypeScript readiness"
+description: "Runs TypeScript type checks in all workspaces with a target TypeScript version"
+
+inputs:
+  typescript-version:
+    description: "TypeScript version tag to use (for example: latest, rc)"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Typecheck with TypeScript ${{ inputs.typescript-version }}
+      env:
+        TYPESCRIPT_VERSION: ${{ inputs.typescript-version }}
+      run: |
+        pnpm --package "typescript@${TYPESCRIPT_VERSION}" dlx tsc --noEmit --project lib/tsconfig.json
+        pnpm --package "typescript@${TYPESCRIPT_VERSION}" dlx tsc --noEmit --project docs/tsconfig.json
+        pnpm --package "typescript@${TYPESCRIPT_VERSION}" dlx tsc --noEmit --project example/tsconfig.json
+      shell: bash

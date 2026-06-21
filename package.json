@@ -1,0 +1,114 @@
+{
+  "name": "typescript-library-template-monorepo",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Template monorepo for building and publishing a TypeScript library",
+  "license": "MIT",
+  "author": "Template Maintainers <maintainers@example.com>",
+  "directories": {
+    "lib": "lib",
+    "doc": "docs",
+    "example": "example"
+  },
+  "scripts": {
+    "build": "pnpm -C lib run build && pnpm -r --parallel --stream --filter ./docs --filter ./example run build",
+    "dev": "node ./scripts/prebuild-lib-if-needed.mjs && pnpm -r --parallel --stream --filter ./lib --filter ./docs --filter ./example run dev",
+    "format": "prettier --check \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml,sh}\"",
+    "format:fix": "prettier --write \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml,sh}\"",
+    "install-git-hooks": "pnpm exec simple-git-hooks",
+    "knip": "knip --cache --production",
+    "lint": "node ./scripts/prebuild-lib-if-needed.mjs && eslint --cache --ext .ts,.tsx,.js,.jsx,.mjs,.cjs,.json .",
+    "lint:commits": "bash -c \"if git rev-parse --verify HEAD~1 >/dev/null 2>&1; then pnpm exec commitlint --from=HEAD~1 --to=HEAD; else pnpm exec commitlint --last; fi\"",
+    "lint:fix": "node ./scripts/prebuild-lib-if-needed.mjs && eslint --cache --fix --ext .ts,.tsx,.js,.jsx,.mjs,.cjs,.json .",
+    "lint:md-links": "pnpm exec remark . --ext .md --frail --quiet && REMARK_MDX=1 pnpm exec remark . --ext .mdx --frail --quiet",
+    "lint-staged": "lint-staged",
+    "prepare": "pnpm run install-git-hooks && node ./scripts/prebuild-lib-if-needed.mjs",
+    "test": "node ./scripts/prebuild-lib-if-needed.mjs && pnpm -r --if-present run test",
+    "typecheck": "node ./scripts/prebuild-lib-if-needed.mjs && pnpm -r --if-present run typecheck",
+    "verify:package": "pnpm -C lib run verify:package",
+    "version": "bash ./scripts/version.sh"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm run lint-staged",
+    "commit-msg": "pnpm exec commitlint --edit $1",
+    "preserveUnused": [
+      "commit-msg"
+    ]
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,mjs,cjs}": [
+      "pnpm exec eslint --fix",
+      "pnpm exec prettier --write"
+    ],
+    "**/*.json": [
+      "pnpm exec eslint --fix",
+      "pnpm exec prettier --write"
+    ],
+    "**/*.{md,yaml,yml}": "pnpm exec prettier --write",
+    "**/*.sh": "pnpm exec prettier --write"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "catalog:",
+    "@commitlint/config-conventional": "catalog:",
+    "@commitlint/format": "catalog:",
+    "@commitlint/types": "catalog:",
+    "@eslint/js": "catalog:",
+    "@size-limit/preset-small-lib": "catalog:",
+    "@types/node": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
+    "eslint": "catalog:",
+    "eslint-import-resolver-typescript": "catalog:",
+    "eslint-plugin-import": "catalog:",
+    "eslint-plugin-jsdoc": "catalog:",
+    "eslint-plugin-no-secrets": "catalog:",
+    "eslint-plugin-package-json": "catalog:",
+    "eslint-plugin-perfectionist": "catalog:",
+    "eslint-plugin-promise": "catalog:",
+    "eslint-plugin-regexp": "catalog:",
+    "eslint-plugin-security": "catalog:",
+    "eslint-plugin-sonarjs": "catalog:",
+    "eslint-plugin-unicorn": "catalog:",
+    "eslint-plugin-vitest": "catalog:",
+    "globals": "catalog:",
+    "jsonc-eslint-parser": "catalog:",
+    "knip": "catalog:",
+    "lint-staged": "catalog:",
+    "prettier": "catalog:",
+    "prettier-plugin-multiline-arrays": "catalog:",
+    "prettier-plugin-packagejson": "catalog:",
+    "prettier-plugin-sh": "catalog:",
+    "prettier-plugin-sort-json": "catalog:",
+    "remark-cli": "catalog:",
+    "remark-mdx": "catalog:",
+    "remark-validate-links": "catalog:",
+    "simple-git-hooks": "catalog:",
+    "size-limit": "catalog:",
+    "typescript": "catalog:",
+    "typescript-eslint": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-circular-dependency": "catalog:",
+    "vitest": "catalog:"
+  },
+  "packageManager": "pnpm@10.32.0",
+  "engines": {
+    "node": ">=20.19.0 <25",
+    "pnpm": ">=10.32.0"
+  },
+  "knip": {
+    "ignore": [
+      ".remarkrc.mjs",
+      "scripts/prebuild-lib-if-needed.mjs"
+    ],
+    "ignoreBinaries": [
+      "commitlint",
+      "commit-msg"
+    ],
+    "workspaces": {
+      "lib": {
+        "ignore": [
+          "vite/plugins/prepend-entry-banner.ts"
+        ]
+      }
+    }
+  }
+}

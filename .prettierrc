@@ -1,0 +1,20 @@
+{
+  "arrowParens": "avoid",
+  "bracketSpacing": true,
+  "jsonRecursiveSort": true,
+  "jsonSortOrder": "{ \"placeThisFirst\": null, \"/^[a-zA-Z0-9]/\": \"caseInsensitiveNumeric\"  }",
+  "jsxSingleQuote": false,
+  "multilineArraysWrapThreshold": 5,
+  "plugins": [
+    "prettier-plugin-sort-json",
+    "prettier-plugin-packagejson",
+    "prettier-plugin-multiline-arrays",
+    "prettier-plugin-sh"
+  ],
+  "printWidth": 90,
+  "semi": true,
+  "singleQuote": false,
+  "trailingComma": "es5",
+  "vueIndentScriptAndStyle": true,
+  "$schema": "http://json.schemastore.org/prettierrc"
+}

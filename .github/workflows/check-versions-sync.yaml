@@ -1,0 +1,27 @@
+name: Check Versions in Sync
+
+# This workflow ensures that the versions in package.json, jsr.json, and version.ts are in sync.
+
+on:
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check-versions-in-sync:
+    name: Check Versions in Sync
+    runs-on: ubuntu-24.04 # pinned for determinism
+    permissions:
+      contents: read
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - name: Check versions in sync
+        uses: ./.github/actions/check-versions-sync
+        with:
+          PACKAGE_JSON: lib/package.json
+          JSR_JSON: lib/jsr.json

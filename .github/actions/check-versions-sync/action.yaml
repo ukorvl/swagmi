@@ -1,0 +1,35 @@
+name: "Check versions in sync"
+description: "Checks that the version in package.json matches the version in jsr.json"
+
+inputs:
+  PACKAGE_JSON:
+    description: "Path to the package.json file"
+    required: true
+    default: "lib/package.json"
+  JSR_JSON:
+    description: "Path to the jsr.json file"
+    required: true
+    default: "lib/jsr.json"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Get package.json version
+      shell: bash
+      run: |
+        PKG_VERSION=$(jq -r '.version' -- "${INPUTS_PACKAGE_JSON}")
+        echo "PKG_VERSION=$PKG_VERSION" >> $GITHUB_ENV
+      env:
+        INPUTS_PACKAGE_JSON: ${{ inputs.PACKAGE_JSON }}
+
+    - name: Check jsr.json version
+      shell: bash
+      run: |
+        JS_VERSION=$(jq -r '.version' -- "${INPUTS_JSR_JSON}")
+        if [[ "$JS_VERSION" != "$PKG_VERSION" ]]; then
+          echo "Error: jsr.json version ($JS_VERSION) does not match package.json version ($PKG_VERSION)"
+          exit 1
+        fi
+        echo "jsr.json version ($JS_VERSION) matches package.json version ($PKG_VERSION)."
+      env:
+        INPUTS_JSR_JSON: ${{ inputs.JSR_JSON }}

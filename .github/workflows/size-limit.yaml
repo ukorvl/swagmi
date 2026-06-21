@@ -1,0 +1,45 @@
+name: Size
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "lib/**"
+      - ".github/actions/install/**"
+      - ".github/workflows/size-limit.yaml"
+      - "package.json"
+      - "pnpm-lock.yaml"
+  workflow_dispatch:
+
+permissions:
+  pull-requests: write
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  size:
+    runs-on: ubuntu-24.04 # pinned for determinism
+    env:
+      CI_JOB_NUMBER: 1
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Install dependencies
+        uses: ./.github/actions/install
+        with:
+          node-version: 24
+
+      - uses: andresz1/size-limit-action@94bc357df29c36c8f8d50ea497c3e225c3c95d1d # v1.8.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          skip_step: install
+          directory: lib
+          build_script: build
+          package_manager: pnpm

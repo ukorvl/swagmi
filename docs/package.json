@@ -1,0 +1,24 @@
+{
+  "name": "typescript-library-template-docs",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Documentation workspace for the TypeScript library template",
+  "license": "MIT",
+  "author": "Template Maintainers <maintainers@example.com>",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite dev",
+    "preview": "vite preview",
+    "test": "vitest run --config vitest.config.ts",
+    "typecheck": "tsc --noEmit --project tsconfig.json"
+  },
+  "dependencies": {
+    "typescript-library-template": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-circular-dependency": "catalog:",
+    "vitest": "catalog:"
+  }
+}

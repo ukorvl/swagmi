@@ -1,0 +1,51 @@
+name: "Lint"
+description: "Lint the code in the repo, check for unused files, dependencies, and exports"
+
+inputs:
+  check-commits:
+    description: "Check if the commits follow the conventional commits specification"
+    required: false
+    default: "false"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Lint
+      run: pnpm run lint
+      shell: bash
+
+    - name: Typecheck
+      run: pnpm run typecheck
+      shell: bash
+
+    - name: Format
+      run: pnpm run format
+      shell: bash
+
+    - name: Validate JSON and YAML files
+      uses: GrantBirki/json-yaml-validate@9bbaa8474e3af4e91f25eda8ac194fdc30564d96 # v4.0.0
+
+    - name: Lint shell scripts with ShellCheck
+      uses: ludeeus/action-shellcheck@00cae500b08a931fb5698e11e79bfbd38e612a38 # 2.0.0
+      with:
+        scandir: "."
+        ignore_paths: "node_modules dist coverage .pnpm-store"
+        severity: "error"
+        version: v0.11.0
+
+    - name: Validate markdown links
+      run: pnpm run lint:md-links
+      shell: bash
+
+    - name: Check for unused files, dependencies, and exports
+      run: pnpm run knip
+      shell: bash
+
+    - name: Lint commits
+      if: ${{ inputs.check-commits == 'true' }}
+      run: pnpm run lint:commits
+      shell: bash
+
+    - name: Verify package (attw + publint)
+      run: pnpm run verify:package
+      shell: bash

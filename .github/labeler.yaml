@@ -1,0 +1,57 @@
+# This file is used by actions/labeler to automatically label pull requests.
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/workflows/**"
+          - ".github/actions/**"
+          - ".github/labeler.yaml"
+          - ".github/labels.yaml"
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "docs/**"
+          - "**/README.md"
+          - "**/readme.md"
+          - "**/CHANGELOG.md"
+          - "**/changelog.md"
+
+tests:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/tests/**"
+          - "**/test/**"
+          - "**/spec/**"
+          - "**/specs/**"
+          - "**/test.ts"
+          - "**/spec.ts"
+          - "**/test.tsx"
+          - "**/spec.tsx"
+
+example:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "example/**"
+
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/package.json"
+          - "**/pnpm-lock.yaml"
+
+core:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "lib/src/**"
+
+ai:
+  - changed-files:
+      - any-glob-to-any-file:
+          - AGENTS.md
+          - CLAUDE.md
+          - .agents/**
+          - .github/agents/**
+          - .github/prompts/**
+          - .github/instructions/**
+          - .github/copilot-instructions.md

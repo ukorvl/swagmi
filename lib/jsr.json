@@ -1,0 +1,24 @@
+{
+  "exports": "./src/index.ts",
+  "imports": {
+    "@/": "./src/"
+  },
+  "license": "MIT",
+  "name": "@your-scope/typescript-library-template",
+  "publish": {
+    "exclude": [
+      "**/*.test.tsx",
+      "**/*.test.ts",
+      "**/*.spec.tsx",
+      "**/*.spec.ts"
+    ],
+    "include": [
+      "LICENSE",
+      "readme.md",
+      "src/**/*.tsx",
+      "src/**/*.ts"
+    ]
+  },
+  "version": "0.0.1",
+  "$schema": "https://jsr.io/schema/config-file.v1.json"
+}

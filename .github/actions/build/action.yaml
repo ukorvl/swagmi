@@ -1,0 +1,9 @@
+name: "Build app"
+description: "Builds lib, docs and example app and prepares it for deployment"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Build
+      run: pnpm run build
+      shell: bash

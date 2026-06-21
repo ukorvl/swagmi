@@ -1,0 +1,107 @@
+name: Build
+
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-24.04 # pinned for determinism
+    permissions:
+      contents: read
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: ${{ github.event_name == 'pull_request' && 0 || 1 }}
+          persist-credentials: false
+
+      - name: Install dependencies
+        uses: ./.github/actions/install
+
+      - name: Lint
+        uses: ./.github/actions/lint
+        with:
+          check-commits: ${{ github.event_name == 'pull_request' }}
+
+      - name: Build everything
+        uses: ./.github/actions/build
+
+      - name: Test
+        uses: ./.github/actions/test
+        with:
+          upload-coverage: ${{ github.event_name == 'push' }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+  package-attest:
+    name: Package and Attest lib Tarball
+    needs: build
+    runs-on: ubuntu-24.04 # pinned for determinism
+    permissions:
+      contents: read
+      attestations: write
+      artifact-metadata: write
+      id-token: write
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Install dependencies
+        uses: ./.github/actions/install
+
+      - name: Build lib for packaging
+        run: pnpm -C lib run build
+        shell: bash
+
+      - name: Pack library tarball
+        id: pack-lib
+        uses: ./.github/actions/pack-lib
+        with:
+          artifacts-dir: artifacts
+
+      - name: Upload and attest package artifacts
+        uses: ./.github/actions/attest-artifacts
+        with:
+          artifact-name: lib-package
+          subject-path: ${{ steps.pack-lib.outputs.tarball-path }}
+          enable-attestation: ${{ github.event_name != 'pull_request' || !github.event.pull_request.head.repo.fork }}
+
+      - name: Clean up
+        run: rm -rf artifacts
+        shell: bash
+
+  typescript-readiness:
+    name: TypeScript Readiness (${{ matrix.typescript-version }})
+    runs-on: ubuntu-24.04 # pinned for determinism
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        typescript-version:
+          - latest
+          - rc
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: ${{ github.event_name == 'pull_request' && 0 || 1 }}
+          persist-credentials: false
+
+      - name: Install dependencies
+        uses: ./.github/actions/install
+
+      - name: TypeScript readiness check
+        uses: ./.github/actions/typescript-readiness
+        with:
+          typescript-version: ${{ matrix.typescript-version }}

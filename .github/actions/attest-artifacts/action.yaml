@@ -1,0 +1,44 @@
+name: "Attest artifacts"
+description: "Upload artifacts and generate provenance attestations"
+
+inputs:
+  artifact-name:
+    description: "Artifact name for upload"
+    required: false
+    default: "build-artifacts"
+  subject-path:
+    description: "Path or glob of files to upload and attest"
+    required: true
+  sbom-path:
+    description: "Optional path to SPDX or CycloneDX JSON SBOM for the subject artifact"
+    required: false
+    default: ""
+  enable-attestation:
+    description: "Whether to generate attestations (set false for fork PRs)"
+    required: false
+    default: "true"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Upload artifacts
+      uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+      with:
+        name: ${{ inputs.artifact-name }}
+        path: |
+          ${{ inputs.subject-path }}
+          ${{ inputs.sbom-path }}
+        if-no-files-found: error
+
+    - name: Generate provenance attestation
+      if: ${{ inputs.enable-attestation == 'true' }}
+      uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26 # v4.1.0
+      with:
+        subject-path: ${{ inputs.subject-path }}
+
+    - name: Generate SBOM attestation
+      if: ${{ inputs.enable-attestation == 'true' && inputs.sbom-path != '' }}
+      uses: actions/attest@59d89421af93a897026c735860bf21b6eb4f7b26 # v4.1.0
+      with:
+        subject-path: ${{ inputs.subject-path }}
+        sbom-path: ${{ inputs.sbom-path }}
