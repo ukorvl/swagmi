@@ -21,5 +21,7 @@ jobs:
         with:
           fail-on-severity: high
           fail-on-scopes: development, runtime
+          allow-dependencies-licenses: >-
+            pkg:npm/json-schema-typed@8.0.2
           allow-licenses: >-
             MIT,Apache-2.0,BSD-2-Clause,BSD-3-Clause,ISC,MPL-2.0,CC0-1.0,Unlicense,0BSD,BlueOak-1.0.0,LGPL-3.0-only
