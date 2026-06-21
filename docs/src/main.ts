@@ -8,7 +8,7 @@ if (!app) {
 
 app.innerHTML = `
   <main>
-    <h1>typescript-library-template docs</h1>
+    <h1>swagmi docs</h1>
     <p>${getDocumentationIntro()}</p>
     <p>Start local docs with <code>pnpm -C docs run dev</code>.</p>
   </main>

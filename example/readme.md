@@ -1,6 +1,6 @@
 # Example Workspace
 
-This workspace is a real consumer-style integration of `typescript-library-template`.
+This workspace is a real consumer-style integration of `@ukorvl/swagmi`.
 
 ## Commands
 

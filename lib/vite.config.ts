@@ -1,4 +1,3 @@
-import camelCase from "camelcase";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
@@ -23,17 +22,6 @@ const packagePeerDependencies = (
 const externalPackages = Object.keys({
   ...packageDependencies,
   ...packagePeerDependencies,
-});
-const umdGlobals = {
-  "@tanstack/react-query": "TanStackReactQuery",
-  react: "React",
-  "react-dom": "ReactDOM",
-  viem: "Viem",
-  wagmi: "Wagmi",
-};
-
-const umdGlobalName = camelCase(packageName.replace(/^@/u, "").split("/"), {
-  pascalCase: true,
 });
 
 export default defineConfig(() => {
@@ -62,13 +50,8 @@ export default defineConfig(() => {
       sourcemap: true,
       lib: {
         entry: resolve(__dirname, "src/index.ts"),
-        name: umdGlobalName,
-        formats: ["es", "umd"],
-        fileName: format => {
-          if (format === "es") return `${packageFileBaseName}.mjs`;
-          if (format === "umd") return `${packageFileBaseName}.umd.js`;
-          return `${packageFileBaseName}.js`;
-        },
+        formats: ["es"],
+        fileName: () => `${packageFileBaseName}.mjs`,
       },
       rollupOptions: {
         external: identifier =>
@@ -77,9 +60,6 @@ export default defineConfig(() => {
               identifier === externalPackage ||
               identifier.startsWith(`${externalPackage}/`)
           ),
-        output: {
-          globals: umdGlobals,
-        },
       },
     },
   };

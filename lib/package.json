@@ -1,31 +1,30 @@
 {
-  "name": "typescript-library-template",
+  "name": "@ukorvl/swagmi",
   "version": "0.0.1",
-  "description": "Template TypeScript library package",
-  "homepage": "https://github.com/your-org/typescript-library-template",
+  "description": "Advanced React hooks on top of wagmi for production dapps",
+  "homepage": "https://github.com/ukorvl/swagmi",
   "bugs": {
-    "url": "https://github.com/your-org/typescript-library-template/issues"
+    "url": "https://github.com/ukorvl/swagmi/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-org/typescript-library-template.git",
+    "url": "git+https://github.com/ukorvl/swagmi.git",
     "directory": "lib"
   },
   "license": "MIT",
-  "author": "Template Maintainers <maintainers@example.com>",
+  "author": "ukorvl <ukorotovskiy@gmail.com>",
   "sideEffects": false,
   "type": "module",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/typescript-library-template.mjs",
-      "default": "./dist/typescript-library-template.mjs"
+      "import": "./dist/swagmi.mjs",
+      "default": "./dist/swagmi.mjs"
     },
     "./package.json": "./package.json"
   },
-  "main": "dist/typescript-library-template.mjs",
-  "unpkg": "dist/typescript-library-template.umd.js",
-  "module": "dist/typescript-library-template.mjs",
+  "main": "dist/swagmi.mjs",
+  "module": "dist/swagmi.mjs",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
@@ -47,7 +46,6 @@
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@vitest/coverage-v8": "catalog:",
-    "camelcase": "catalog:",
     "jsdom": "catalog:",
     "magic-string": "catalog:",
     "publint": "catalog:",
@@ -68,6 +66,7 @@
     "wagmi": ">=3.0.0"
   },
   "publishConfig": {
+    "access": "public",
     "provenance": true,
     "registry": "https://registry.npmjs.org/"
   }

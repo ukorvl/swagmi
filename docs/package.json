@@ -1,10 +1,10 @@
 {
-  "name": "typescript-library-template-docs",
+  "name": "swagmi-docs",
   "version": "0.0.1",
   "private": true,
-  "description": "Documentation workspace for the TypeScript library template",
+  "description": "Documentation workspace for @ukorvl/swagmi",
   "license": "MIT",
-  "author": "Template Maintainers <maintainers@example.com>",
+  "author": "ukorvl <ukorotovskiy@gmail.com>",
   "scripts": {
     "build": "vite build",
     "dev": "vite dev",
@@ -13,7 +13,7 @@
     "typecheck": "tsc --noEmit --project tsconfig.json"
   },
   "dependencies": {
-    "typescript-library-template": "workspace:*"
+    "@ukorvl/swagmi": "workspace:*"
   },
   "devDependencies": {
     "typescript": "catalog:",

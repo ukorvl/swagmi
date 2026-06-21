@@ -8,7 +8,7 @@ if (!app) {
 
 app.innerHTML = `
   <main>
-    <h1>typescript-library-template example</h1>
+    <h1>swagmi example</h1>
     <p>Status: ${runLibraryExample()}</p>
     <p>Library import resolves through the package name.</p>
   </main>

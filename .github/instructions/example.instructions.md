@@ -9,7 +9,7 @@ Use it to prove that a clean external project can install and use the package wi
 
 ## Technical Rules
 
-- Keep dependency on `typescript-library-template` as `workspace:*`.
+- Keep dependency on `@ukorvl/swagmi` as `workspace:*`.
 - Import from the package name, never from `../lib/src/*`.
 - Do not add TS/Vite alias hacks that bypass package resolution.
 - Demonstrate at least one runtime import and one type usage when possible.

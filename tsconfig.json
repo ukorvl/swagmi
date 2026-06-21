@@ -29,5 +29,6 @@
   "references": [
     { "path": "lib" },
     { "path": "docs" },
-    { "path": "example" }]
+    { "path": "example" }
+  ]
 }

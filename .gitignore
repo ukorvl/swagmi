@@ -56,7 +56,6 @@ Thumbs.db
 *.tsbuildinfo
 
 .agents/
-.claude/
 skills-lock.json
 
 /artifacts/
