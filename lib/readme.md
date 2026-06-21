@@ -1,5 +1,4 @@
 <div align="center">
-  <h1 align="center">Swagmi</h1>
   <picture>
     <source
       media="(prefers-color-scheme: dark)"
@@ -29,11 +28,23 @@
 - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
 - [Basic usage](#basic-usage)
+- [Advanced examples](#advanced-examples)
+- [Skills](#skills)
+- [Contributing](#contributing)
+- [Security](#security)
 - [License](#license)
 
 ## Installation
 
 ## Basic usage
+
+## Advanced examples
+
+## Skills
+
+## Contributing
+
+## Security
 
 ## License
 

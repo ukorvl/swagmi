@@ -57,7 +57,7 @@ catalog:
   "vitest": "^4.1.0"
   "wagmi": "^3.6.17"
 
-minimumReleaseAge: 60
+minimumReleaseAge: 10080 # 7 days
 minimumReleaseAgeExclude:
   - "typescript"
   - "@types/*"
