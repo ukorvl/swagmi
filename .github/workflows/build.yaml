@@ -12,8 +12,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Build
+  lint:
+    name: Lint
     runs-on: ubuntu-24.04 # pinned for determinism
     permissions:
       contents: read
@@ -31,6 +31,21 @@ jobs:
         uses: ./.github/actions/lint
         with:
           check-commits: ${{ github.event_name == 'pull_request' }}
+
+  build:
+    name: Build
+    runs-on: ubuntu-24.04 # pinned for determinism
+    permissions:
+      contents: read
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        with:
+          fetch-depth: ${{ github.event_name == 'pull_request' && 0 || 1 }}
+          persist-credentials: false
+
+      - name: Install dependencies
+        uses: ./.github/actions/install
 
       - name: Build everything
         uses: ./.github/actions/build
