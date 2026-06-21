@@ -88,8 +88,8 @@ catalogs:
       specifier: ^0.30.21
       version: 0.30.21
     prettier:
-      specifier: ^3.7.3
-      version: 3.7.3
+      specifier: ^3.8.4
+      version: 3.8.4
     prettier-plugin-multiline-arrays:
       specifier: ^4.1.9
       version: 4.1.9
@@ -217,19 +217,19 @@ importers:
         version: 16.4.0
       prettier:
         specifier: 'catalog:'
-        version: 3.7.3
+        version: 3.8.4
       prettier-plugin-multiline-arrays:
         specifier: 'catalog:'
-        version: 4.1.9(prettier@3.7.3)
+        version: 4.1.9(prettier@3.8.4)
       prettier-plugin-packagejson:
         specifier: 'catalog:'
-        version: 3.0.2(prettier@3.7.3)
+        version: 3.0.2(prettier@3.8.4)
       prettier-plugin-sh:
         specifier: 'catalog:'
-        version: 0.18.1(prettier@3.7.3)
+        version: 0.18.1(prettier@3.8.4)
       prettier-plugin-sort-json:
         specifier: 'catalog:'
-        version: 4.2.0(prettier@3.7.3)
+        version: 4.2.0(prettier@3.8.4)
       remark-cli:
         specifier: 'catalog:'
         version: 12.0.1
@@ -3605,8 +3605,8 @@ packages:
     peerDependencies:
       prettier: ^3.0.0
 
-  prettier@3.7.3:
-    resolution: {integrity: sha512-QgODejq9K3OzoBbuyobZlUhznP5SKwPqp+6Q6xw6o8gnhr4O85L2U915iM2IDcfF2NPXVaM9zlo9tdwipnYwzg==}
+  prettier@3.8.4:
+    resolution: {integrity: sha512-N2MylSdi48+5N/6S5j+maeHbUSIzzZ5uOcX5Hm4QpV8Dkb1HFjfAKTKX6yNPJQD9AhcT3ifHNB66tWTTJDi11Q==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -7911,30 +7911,30 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-multiline-arrays@4.1.9(prettier@3.7.3):
+  prettier-plugin-multiline-arrays@4.1.9(prettier@3.8.4):
     dependencies:
       '@augment-vir/assert': 31.73.2
       '@augment-vir/common': 31.73.2
-      prettier: 3.7.3
+      prettier: 3.8.4
       proxy-vir: 2.0.3
 
-  prettier-plugin-packagejson@3.0.2(prettier@3.7.3):
+  prettier-plugin-packagejson@3.0.2(prettier@3.8.4):
     dependencies:
       sort-package-json: 3.6.0
     optionalDependencies:
-      prettier: 3.7.3
+      prettier: 3.8.4
 
-  prettier-plugin-sh@0.18.1(prettier@3.7.3):
+  prettier-plugin-sh@0.18.1(prettier@3.8.4):
     dependencies:
       '@reteps/dockerfmt': 0.5.2
-      prettier: 3.7.3
+      prettier: 3.8.4
       sh-syntax: 0.5.8
 
-  prettier-plugin-sort-json@4.2.0(prettier@3.7.3):
+  prettier-plugin-sort-json@4.2.0(prettier@3.8.4):
     dependencies:
-      prettier: 3.7.3
+      prettier: 3.8.4
 
-  prettier@3.7.3: {}
+  prettier@3.8.4: {}
 
   proc-log@4.2.0: {}
 
