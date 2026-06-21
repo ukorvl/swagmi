@@ -14,8 +14,15 @@ import * as wagmi from "wagmi";
 
 import { useSmartWriteContract } from "./useSmartWriteContract";
 
+type WagmiModule = typeof wagmi;
+
+const zero = 0;
+const one = 1;
+const oneBigInt = 1n;
+const twoBigInt = 2n;
+
 vi.mock("wagmi", async () => {
-  const actual = await vi.importActual<typeof import("wagmi")>("wagmi");
+  const actual = await vi.importActual<WagmiModule>("wagmi");
 
   return {
     ...actual,
@@ -42,30 +49,32 @@ const abi = [
 const depositRequest = {
   abi,
   address: "0x0000000000000000000000000000000000000001",
-  args: [1n],
+  args: [oneBigInt],
   functionName: "deposit",
 } as const;
 
 const hash = "0x1234" as Hash;
+const replacementHash = "0x5678" as Hash;
 
-const createReceipt = (overrides: Partial<TransactionReceipt> = {}): TransactionReceipt =>
-  ({
-    blockHash: "0xblock",
-    blockNumber: 1n,
-    contractAddress: null,
-    cumulativeGasUsed: 1n,
-    effectiveGasPrice: 1n,
-    from: "0x0000000000000000000000000000000000000001",
-    gasUsed: 1n,
-    logs: [],
-    logsBloom: "0x0",
-    status: "success",
-    to: "0x0000000000000000000000000000000000000002",
-    transactionHash: hash,
-    transactionIndex: 0,
-    type: "legacy",
-    ...overrides,
-  }) as TransactionReceipt;
+const createReceipt = (
+  overrides: Partial<TransactionReceipt> = {}
+): TransactionReceipt => ({
+  blockHash: "0xblock",
+  blockNumber: oneBigInt,
+  contractAddress: null,
+  cumulativeGasUsed: oneBigInt,
+  effectiveGasPrice: oneBigInt,
+  from: "0x0000000000000000000000000000000000000001",
+  gasUsed: oneBigInt,
+  logs: [],
+  logsBloom: "0x0",
+  status: "success",
+  to: "0x0000000000000000000000000000000000000002",
+  transactionHash: hash,
+  transactionIndex: zero,
+  type: "legacy",
+  ...overrides,
+});
 
 const createReplacement = (
   overrides: Partial<ReplacementReturnType> = {}
@@ -76,10 +85,10 @@ const createReplacement = (
       hash,
     },
     transaction: {
-      hash: "0x5678",
+      hash: replacementHash,
     },
     transactionReceipt: createReceipt({
-      transactionHash: "0x5678" as Hash,
+      transactionHash: replacementHash,
     }),
     ...overrides,
   }) as ReplacementReturnType;
@@ -143,7 +152,7 @@ describe("useSmartWriteContract", () => {
       await result.current.writeAsync();
     });
 
-    expect(refetch).toHaveBeenCalledTimes(1);
+    expect(refetch).toHaveBeenCalledTimes(one);
     expect(mutateAsync).toHaveBeenCalledWith(depositRequest);
     expect(result.current.hash).toBe(hash);
     expect(result.current.status).toBe("submitted");
@@ -167,7 +176,7 @@ describe("useSmartWriteContract", () => {
     expect(result.current.isSuccess).toBe(true);
     expect(result.current.receipt?.transactionHash).toBe(hash);
     expect(result.current.status).toBe("success");
-    expect(onReceipt).toHaveBeenCalledTimes(1);
+    expect(onReceipt).toHaveBeenCalledTimes(one);
   });
 
   it("surfaces user-rejected signatures as a dedicated status", async () => {
@@ -238,7 +247,7 @@ describe("useSmartWriteContract", () => {
       abi: errorAbi,
       data: encodeErrorResult({
         abi: errorAbi,
-        args: [1n, 2n],
+        args: [oneBigInt, twoBigInt],
         errorName: "BalanceTooLow",
       }),
       functionName: "deposit",
@@ -283,9 +292,9 @@ describe("useSmartWriteContract", () => {
     });
 
     expect(result.current.decodedError?.errorName).toBe("BalanceTooLow");
-    expect(result.current.decodedError?.args).toEqual([1n, 2n]);
+    expect(result.current.decodedError?.args).toEqual([oneBigInt, twoBigInt]);
     expect(result.current.status).toBe("error");
-    expect(onDecodedError).toHaveBeenCalledTimes(1);
+    expect(onDecodedError).toHaveBeenCalledTimes(one);
   });
 
   it("marks cancelled replacements distinctly", async () => {

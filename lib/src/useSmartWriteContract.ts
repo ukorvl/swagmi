@@ -26,6 +26,11 @@ import {
 
 type SmartWriteContractPhase = "awaiting-signature" | "idle" | "submitted" | "validating";
 
+const defaultConfirmations = 1;
+
+type FirstParameter<TFunction extends (...arguments_: never[]) => unknown> =
+  Parameters<TFunction> extends [infer TParameter, ...unknown[]] ? TParameter : never;
+
 /**
  * Canonical lifecycle state for a contract write.
  */
@@ -179,7 +184,7 @@ export function useSmartWriteContract<
   parameters: UseSmartWriteContractParameters<abi, functionName, args, config, chainId>
 ): UseSmartWriteContractReturnType<abi, functionName, args, config, chainId> {
   const {
-    confirmations = 1,
+    confirmations = defaultConfirmations,
     enabled = true,
     onDecodedError,
     onReceipt,
@@ -350,7 +355,7 @@ export function useSmartWriteContract<
     try {
       setPhase("awaiting-signature");
       const nextHash = await mutation.mutateAsync(
-        request as Parameters<typeof mutation.mutateAsync>[0]
+        request as FirstParameter<typeof mutation.mutateAsync>
       );
       setOriginalHash(nextHash);
       setPhase("submitted");

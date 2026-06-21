@@ -24,7 +24,6 @@
     "./package.json": "./package.json"
   },
   "main": "dist/typescript-library-template.mjs",
-  "unpkg": "dist/typescript-library-template.umd.js",
   "module": "dist/typescript-library-template.mjs",
   "types": "dist/index.d.ts",
   "files": [
@@ -47,7 +46,6 @@
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@vitest/coverage-v8": "catalog:",
-    "camelcase": "catalog:",
     "jsdom": "catalog:",
     "magic-string": "catalog:",
     "publint": "catalog:",
