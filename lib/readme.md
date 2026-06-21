@@ -26,6 +26,15 @@
 
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
+- [Installation](#installation)
+- [Basic usage](#basic-usage)
+- [License](#license)
+
+## Installation
+
+## Basic usage
+
 ## License
 
 [MIT](./LICENSE)
