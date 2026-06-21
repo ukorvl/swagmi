@@ -19,7 +19,7 @@
     "install-git-hooks": "pnpm exec simple-git-hooks",
     "knip": "knip --cache --production",
     "lint": "node ./scripts/prebuild-lib-if-needed.mjs && eslint --cache --ext .ts,.tsx,.js,.jsx,.mjs,.cjs,.json .",
-    "lint:commits": "bash -c \"if git rev-parse --verify HEAD~1 >/dev/null 2>&1; then pnpm exec commitlint --from=HEAD~1 --to=HEAD; else pnpm exec commitlint --last; fi\"",
+    "lint:commits": "bash ./scripts/lint-commits.sh",
     "lint:fix": "node ./scripts/prebuild-lib-if-needed.mjs && eslint --cache --fix --ext .ts,.tsx,.js,.jsx,.mjs,.cjs,.json .",
     "lint:md-links": "pnpm exec remark . --ext .md --frail --quiet && REMARK_MDX=1 pnpm exec remark . --ext .mdx --frail --quiet",
     "lint-staged": "lint-staged",

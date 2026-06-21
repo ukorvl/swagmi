@@ -6,6 +6,14 @@ inputs:
     description: "Check if the commits follow the conventional commits specification"
     required: false
     default: "false"
+  commitlint-from-ref:
+    description: "Exclusive start ref for the commitlint range"
+    required: false
+    default: ""
+  commitlint-to-ref:
+    description: "Inclusive end ref for the commitlint range"
+    required: false
+    default: ""
 
 runs:
   using: "composite"
@@ -45,6 +53,9 @@ runs:
       if: ${{ inputs.check-commits == 'true' }}
       run: pnpm run lint:commits
       shell: bash
+      env:
+        COMMITLINT_FROM_REF: ${{ inputs.commitlint-from-ref }}
+        COMMITLINT_TO_REF: ${{ inputs.commitlint-to-ref }}
 
     - name: Verify package (attw + publint)
       run: pnpm run verify:package
