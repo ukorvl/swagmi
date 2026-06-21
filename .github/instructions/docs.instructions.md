@@ -9,7 +9,7 @@ Treat it as product-facing surface area: setup instructions, API guidance, and u
 
 ## Technical Rules
 
-- Use package imports exactly as consumers do (`typescript-library-template`), not internal source paths.
+- Use package imports exactly as consumers do (`@ukorvl/swagmi`), not internal source paths.
 - Keep docs examples executable or type-checkable whenever possible.
 - If a docs framework/site is introduced, wire stable `dev` and `build` scripts in `docs/package.json`.
 - Keep commands and paths copy-paste safe for first-time users of this template.

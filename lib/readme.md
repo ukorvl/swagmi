@@ -1,8 +1,8 @@
-# swag-mi
+# @ukorvl/swagmi
 
-`swag-mi` is an ESM-only collection of advanced React hooks built on top of [wagmi](https://wagmi.sh/) for production dapp flows.
+`@ukorvl/swagmi` is an ESM-only collection of advanced React hooks built on top of [wagmi](https://wagmi.sh/) for production dapp flows.
 
-Repository: [ukorvl/swag-mi](https://github.com/ukorvl/swag-mi)
+Repository: [ukorvl/swagmi](https://github.com/ukorvl/swagmi)
 
 ## Current Hooks
 
@@ -11,19 +11,19 @@ Repository: [ukorvl/swag-mi](https://github.com/ukorvl/swag-mi)
 ## Install
 
 ```sh
-pnpm add swag-mi wagmi viem @tanstack/react-query react
+pnpm add @ukorvl/swagmi wagmi viem @tanstack/react-query react
 ```
 
-`swag-mi` expects wagmi, viem, React, and TanStack Query to already be part of your app.
+`@ukorvl/swagmi` expects wagmi, viem, React, and TanStack Query to already be part of your app.
 
 ## ESM Only
 
-`swag-mi` ships ESM only. Use it in modern bundlers and runtimes that support ESM package entrypoints.
+`@ukorvl/swagmi` ships ESM only. Use it in modern bundlers and runtimes that support ESM package entrypoints.
 
 ## Example
 
 ```tsx
-import { useSmartWriteContract } from "swag-mi";
+import { useSmartWriteContract } from "@ukorvl/swagmi";
 
 const useDeposit = () =>
   useSmartWriteContract({

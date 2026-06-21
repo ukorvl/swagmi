@@ -1,8 +1,8 @@
 {
-  "name": "swag-mi-monorepo",
+  "name": "swagmi-monorepo",
   "version": "0.0.1",
   "private": true,
-  "description": "Monorepo for swag-mi, advanced React hooks on top of wagmi",
+  "description": "Monorepo for @ukorvl/swagmi, advanced React hooks on top of wagmi",
   "license": "MIT",
   "author": "ukorvl",
   "directories": {
@@ -12,6 +12,7 @@
   },
   "scripts": {
     "build": "pnpm -C lib run build && pnpm -r --parallel --stream --filter ./docs --filter ./example run build",
+    "check:react-doctor": "react-doctor . --blocking error --yes --no-telemetry --no-score",
     "dev": "node ./scripts/prebuild-lib-if-needed.mjs && pnpm -r --parallel --stream --filter ./lib --filter ./docs --filter ./example run dev",
     "format": "prettier --check \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml,sh}\"",
     "format:fix": "prettier --write \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml,sh}\"",
@@ -78,6 +79,7 @@
     "prettier-plugin-packagejson": "catalog:",
     "prettier-plugin-sh": "catalog:",
     "prettier-plugin-sort-json": "catalog:",
+    "react-doctor": "catalog:",
     "remark-cli": "catalog:",
     "remark-mdx": "catalog:",
     "remark-validate-links": "catalog:",

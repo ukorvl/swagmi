@@ -1,6 +1,6 @@
 # Example Workspace
 
-This workspace is a real consumer-style integration of `swag-mi`.
+This workspace is a real consumer-style integration of `@ukorvl/swagmi`.
 
 ## Commands
 

@@ -1,6 +1,6 @@
 # Documentation Workspace
 
-This workspace provides a minimal Vite-powered docs shell for `swag-mi`.
+This workspace provides a minimal Vite-powered docs shell for `@ukorvl/swagmi`.
 
 ## Commands
 

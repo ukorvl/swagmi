@@ -4,7 +4,7 @@
     "@/": "./src/"
   },
   "license": "MIT",
-  "name": "@ukorvl/swag-mi",
+  "name": "@ukorvl/swagmi",
   "publish": {
     "exclude": [
       "**/*.test.tsx",

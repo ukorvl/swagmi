@@ -7,11 +7,11 @@ assignees:
 ---
 
 **Describe the bug**
-Describe the unexpected behavior in `swag-mi`, including which hook or workflow is affected.
+Describe the unexpected behavior in `@ukorvl/swagmi`, including which hook or workflow is affected.
 
 **Environment**
 
-- `swag-mi` version:
+- `@ukorvl/swagmi` version:
 - `wagmi` version:
 - `viem` version:
 - React version:

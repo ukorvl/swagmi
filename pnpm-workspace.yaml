@@ -40,6 +40,7 @@ catalog:
   "prettier-plugin-packagejson": "^3.0.2"
   "prettier-plugin-sh": "^0.18.1"
   "prettier-plugin-sort-json": "^4.2.0"
+  "react-doctor": "0.5.8"
   "publint": "^0.3.21"
   "react": "^19.2.7"
   "react-dom": "^19.2.7"

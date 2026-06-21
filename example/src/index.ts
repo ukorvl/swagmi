@@ -1,4 +1,4 @@
-import { useSmartWriteContract } from "swag-mi";
+import { useSmartWriteContract } from "@ukorvl/swagmi";
 
 type SmartWriteHook = typeof useSmartWriteContract;
 const emptyHookNameLength = 0;

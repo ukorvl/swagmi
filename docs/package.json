@@ -1,8 +1,8 @@
 {
-  "name": "swag-mi-docs",
+  "name": "swagmi-docs",
   "version": "0.0.1",
   "private": true,
-  "description": "Documentation workspace for swag-mi",
+  "description": "Documentation workspace for @ukorvl/swagmi",
   "license": "MIT",
   "author": "ukorvl <ukorotovskiy@gmail.com>",
   "scripts": {
@@ -13,7 +13,7 @@
     "typecheck": "tsc --noEmit --project tsconfig.json"
   },
   "dependencies": {
-    "swag-mi": "workspace:*"
+    "@ukorvl/swagmi": "workspace:*"
   },
   "devDependencies": {
     "typescript": "catalog:",
