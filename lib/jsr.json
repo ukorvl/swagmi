@@ -4,7 +4,7 @@
     "@/": "./src/"
   },
   "license": "MIT",
-  "name": "@your-scope/typescript-library-template",
+  "name": "@ukorvl/swag-mi",
   "publish": {
     "exclude": [
       "**/*.test.tsx",

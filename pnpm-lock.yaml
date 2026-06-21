@@ -287,7 +287,7 @@ importers:
 
   docs:
     dependencies:
-      typescript-library-template:
+      swag-mi:
         specifier: workspace:*
         version: link:../lib
     devDependencies:
@@ -306,7 +306,7 @@ importers:
 
   example:
     dependencies:
-      typescript-library-template:
+      swag-mi:
         specifier: workspace:*
         version: link:../lib
     devDependencies:

@@ -1,4 +1,4 @@
-import { useSmartWriteContract } from "typescript-library-template";
+import { useSmartWriteContract } from "swag-mi";
 
 type SmartWriteHook = typeof useSmartWriteContract;
 const emptyHookNameLength = 0;

@@ -1,10 +1,10 @@
 {
-  "name": "typescript-library-template-example",
+  "name": "swag-mi-example",
   "version": "0.0.1",
   "private": true,
-  "description": "Example workspace for the TypeScript library template",
+  "description": "Example workspace for swag-mi",
   "license": "MIT",
-  "author": "Template Maintainers <maintainers@example.com>",
+  "author": "ukorvl <ukorotovskiy@gmail.com>",
   "scripts": {
     "build": "vite build",
     "dev": "vite dev",
@@ -13,7 +13,7 @@
     "typecheck": "tsc --noEmit --project tsconfig.json"
   },
   "dependencies": {
-    "typescript-library-template": "workspace:*"
+    "swag-mi": "workspace:*"
   },
   "devDependencies": {
     "typescript": "catalog:",

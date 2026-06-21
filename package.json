@@ -1,10 +1,10 @@
 {
-  "name": "typescript-library-template-monorepo",
+  "name": "swag-mi-monorepo",
   "version": "0.0.1",
   "private": true,
-  "description": "Template monorepo for building and publishing a TypeScript library",
+  "description": "Monorepo for swag-mi, advanced React hooks on top of wagmi",
   "license": "MIT",
-  "author": "Template Maintainers <maintainers@example.com>",
+  "author": "ukorvl",
   "directories": {
     "lib": "lib",
     "doc": "docs",
