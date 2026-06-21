@@ -10,7 +10,7 @@ catalog:
   "@commitlint/types": "^20.5.0"
   "@eslint/js": "^9.39.4"
   "@size-limit/preset-small-lib": "^12.0.0"
-  "@types/node": "^25.6.0"
+  "@types/node": "^22.19.21"
   "@vitest/coverage-v8": "^4.1.0"
   "camelcase": "^9.0.0"
   "eslint": "^9.39.4"
