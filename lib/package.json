@@ -41,7 +41,7 @@
     "verify:tarball": "bash ../scripts/verify-tarball.sh"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.18.2",
+    "@arethetypeswrong/cli": "^0.18.3",
     "@vitest/coverage-v8": "catalog:",
     "camelcase": "catalog:",
     "magic-string": "catalog:",
