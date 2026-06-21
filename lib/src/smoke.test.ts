@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest";
 
-import { stubFunction } from "./index";
+import { useSmartWriteContract } from "./index";
 
 describe("library smoke", () => {
-  it("exports stubFunction", () => {
-    expect(typeof stubFunction).toBe("function");
+  it("exports useSmartWriteContract", () => {
+    expect(typeof useSmartWriteContract).toBe("function");
   });
 });

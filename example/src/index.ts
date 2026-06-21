@@ -1,12 +1,12 @@
-import { stubFunction } from "typescript-library-template";
+import { useSmartWriteContract } from "typescript-library-template";
 
-type StubResult = ReturnType<typeof stubFunction>;
+type SmartWriteHook = typeof useSmartWriteContract;
 
 const runLibraryExample = (): string => {
-  const result: StubResult = stubFunction();
+  const hookName: SmartWriteHook["name"] = useSmartWriteContract.name;
 
-  if (result !== undefined) {
-    throw new Error("stubFunction is expected to return undefined.");
+  if (hookName.length === 0) {
+    throw new Error("useSmartWriteContract should have a stable function name.");
   }
 
   return "ok";

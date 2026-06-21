@@ -14,6 +14,23 @@ const packageName = packageJson.name;
 const packageFileBaseName = packageName.split("/").at(-1) ?? packageName;
 const packageVersion = packageJson.version;
 const packageLicense = packageJson.license;
+const packageDependencies = (
+  "dependencies" in packageJson ? packageJson.dependencies : {}
+) as Record<string, string>;
+const packagePeerDependencies = (
+  "peerDependencies" in packageJson ? packageJson.peerDependencies : {}
+) as Record<string, string>;
+const externalPackages = Object.keys({
+  ...packageDependencies,
+  ...packagePeerDependencies,
+});
+const umdGlobals = {
+  "@tanstack/react-query": "TanStackReactQuery",
+  react: "React",
+  "react-dom": "ReactDOM",
+  viem: "Viem",
+  wagmi: "Wagmi",
+};
 
 const umdGlobalName = camelCase(packageName.replace(/^@/u, "").split("/"), {
   pascalCase: true,
@@ -51,6 +68,17 @@ export default defineConfig(() => {
           if (format === "es") return `${packageFileBaseName}.mjs`;
           if (format === "umd") return `${packageFileBaseName}.umd.js`;
           return `${packageFileBaseName}.js`;
+        },
+      },
+      rollupOptions: {
+        external: identifier =>
+          externalPackages.some(
+            externalPackage =>
+              identifier === externalPackage ||
+              identifier.startsWith(`${externalPackage}/`)
+          ),
+        output: {
+          globals: umdGlobals,
         },
       },
     },

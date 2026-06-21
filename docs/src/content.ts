@@ -1,10 +1,9 @@
-import { stubFunction } from "typescript-library-template";
+import { useSmartWriteContract } from "typescript-library-template";
 
 const getDocumentationIntro = (): string => {
-  // Exercise package import resolution exactly as an external consumer would.
-  stubFunction();
+  const hookName = useSmartWriteContract.name;
 
-  return "Use root dev/typecheck/test commands to prebuild lib automatically when needed.";
+  return `Use ${hookName} for a single simulate-sign-submit-confirm lifecycle, and use the root dev/typecheck/test commands to prebuild lib automatically when needed.`;
 };
 
 export { getDocumentationIntro };
