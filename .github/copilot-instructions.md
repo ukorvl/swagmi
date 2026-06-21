@@ -1,6 +1,6 @@
-# TypeScript Library Template — AI Source of Truth
+# swag-mi — AI Source of Truth
 
-This repository is a pnpm monorepo template for shipping a TypeScript library from `lib/`, with `docs/` and `example/` workspaces.
+This repository contains `swag-mi`, an ESM-only TypeScript library of advanced React hooks built on top of wagmi for production dapps, with `lib/`, `docs/`, and `example/` workspaces.
 `AGENTS.md` and `CLAUDE.md` are symlink mirrors of this file.
 
 ## Baseline Rules
@@ -22,9 +22,9 @@ This repository is a pnpm monorepo template for shipping a TypeScript library fr
 
 ## Workspace Map
 
-- `lib/` — publishable package (`package.json` exports, Vite build, Vitest tests).
+- `lib/` — the publishable `swag-mi` package (`package.json` exports, Vite build, Vitest tests).
 - `docs/` — user-facing documentation workspace.
-- `example/` — consumer integration workspace.
+- `example/` — consumer integration workspace showing `swag-mi` usage.
 
 ## Path-Specific Instructions
 
@@ -49,11 +49,12 @@ These scoped files are authoritative for code under their paths.
 
 ## Outcome Standard
 
-Changes should leave the template in a state where a new team can:
+Changes should leave `swag-mi` in a state where contributors can:
 
 - install dependencies,
 - run lint/typecheck/test,
-- build and verify the package.
+- build and verify the package,
+- and understand how the library is intended to be consumed from the docs and example app.
 
 ## Required Verification Commands
 

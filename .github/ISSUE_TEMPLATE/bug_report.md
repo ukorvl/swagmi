@@ -7,25 +7,32 @@ assignees:
 ---
 
 **Describe the bug**
-A clear and concise description of what the bug is.
+Describe the unexpected behavior in `swag-mi`, including which hook or workflow is affected.
 
 **Environment**
 
-- Node version: [e.g. 14.17.0] and package manager
-- Browser: [e.g. Chrome, Safari] and version
+- `swag-mi` version:
+- `wagmi` version:
+- `viem` version:
+- React version:
+- Node version and package manager:
+- Browser and version:
+- Wallet / connector:
+- Network / chain ID:
 
 **To Reproduce**
-Steps to reproduce the behavior:
+Share the smallest reproduction you can. Include the relevant hook call, config, and contract interaction details.
 
-1. Go to '...'
-2. Click on '...'
-3. See error
+1. Render or call `...`
+2. Connect with `...`
+3. Interact with contract `...`
+4. Observe `...`
 
 **Expected behavior**
-A clear and concise description of what you expected to happen.
+Describe what you expected the hook or transaction flow to do instead.
 
 **Screenshots**
 If applicable, add screenshots to help explain the problem.
 
 **Additional context**
-Add any other context about the problem here.
+Add logs, error messages, transaction hashes, RPC/provider details, or links to a reproduction repository here.
