@@ -2,6 +2,9 @@ import { defineConfig } from "vite";
 import circularDependency from "vite-plugin-circular-dependency";
 
 export default defineConfig({
+  esbuild: {
+    jsx: "automatic",
+  },
   resolve: {
     tsconfigPaths: true,
   },

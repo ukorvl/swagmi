@@ -1,5 +1,4 @@
 <div align="center">
-  <h1 align="center">Swagmi</h1>
   <picture>
     <source
       media="(prefers-color-scheme: dark)"
@@ -14,7 +13,7 @@
     />
   </picture>
   <p>
-    Have you ever copied your custom React hooks built on top of <a href="https://wagmi.sh">wagmi</a> from one web3 project to another? Have you ever struggled with allowance handling or preventing your dApp from showing the wrong state after a transaction is signed? I did, and that's why this library was created.
+    Have you ever copied your custom React hooks built on top of <a href="https://wagmi.sh">wagmi</a> from one web3 project to another? Have you ever struggled with allowance handling or preventing your dApp from showing the wrong state after a transaction is signed? That shared pain deserves a shared abstraction.
   </p>
   <br />
   <p>
@@ -25,6 +24,27 @@
 </div>
 
 ## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [Installation](#installation)
+- [Basic usage](#basic-usage)
+- [Advanced examples](#advanced-examples)
+- [Skills](#skills)
+- [Contributing](#contributing)
+- [Security](#security)
+- [License](#license)
+
+## Installation
+
+## Basic usage
+
+## Advanced examples
+
+## Skills
+
+## Contributing
+
+## Security
 
 ## License
 

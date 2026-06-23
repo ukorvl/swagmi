@@ -6,6 +6,14 @@ inputs:
     description: "Check if the commits follow the conventional commits specification"
     required: false
     default: "false"
+  commitlint-from-ref:
+    description: "Exclusive start ref for the commitlint range"
+    required: false
+    default: ""
+  commitlint-to-ref:
+    description: "Inclusive end ref for the commitlint range"
+    required: false
+    default: ""
 
 runs:
   using: "composite"
@@ -37,6 +45,10 @@ runs:
       run: pnpm run lint:md-links
       shell: bash
 
+    - name: Enforce fixed dependency versions and catalog usage
+      run: pnpm run lint:deps
+      shell: bash
+
     - name: Check for unused files, dependencies, and exports
       run: pnpm run knip
       shell: bash
@@ -45,6 +57,9 @@ runs:
       if: ${{ inputs.check-commits == 'true' }}
       run: pnpm run lint:commits
       shell: bash
+      env:
+        COMMITLINT_FROM_REF: ${{ inputs.commitlint-from-ref }}
+        COMMITLINT_TO_REF: ${{ inputs.commitlint-to-ref }}
 
     - name: Verify package (attw + publint)
       run: pnpm run verify:package

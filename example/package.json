@@ -6,16 +6,26 @@
   "license": "MIT",
   "author": "ukorvl <ukorotovskiy@gmail.com>",
   "scripts": {
-    "build": "vite build",
-    "dev": "vite dev",
+    "build": "node ../scripts/prebuild-lib-if-needed.mjs && vite build",
+    "chain:local": "anvil --chain-id 31337 --block-time 1",
+    "deploy:local": "node ./scripts/deploy-demo-contract.mjs local",
+    "deploy:sepolia": "node ./scripts/deploy-demo-contract.mjs sepolia",
+    "dev": "node ../scripts/prebuild-lib-if-needed.mjs && vite dev",
     "preview": "vite preview",
-    "test": "vitest run --config vitest.config.ts",
-    "typecheck": "tsc --noEmit --project tsconfig.json"
+    "test": "node ../scripts/prebuild-lib-if-needed.mjs && vitest run --config vitest.config.ts",
+    "typecheck": "node ../scripts/prebuild-lib-if-needed.mjs && tsc --noEmit --project tsconfig.json"
   },
   "dependencies": {
-    "@ukorvl/swagmi": "workspace:*"
+    "@tanstack/react-query": "catalog:",
+    "@ukorvl/swagmi": "workspace:*",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "viem": "catalog:",
+    "wagmi": "catalog:"
   },
   "devDependencies": {
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
     "vite-plugin-circular-dependency": "catalog:",

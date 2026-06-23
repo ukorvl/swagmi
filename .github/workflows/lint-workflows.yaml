@@ -10,8 +10,8 @@ on:
 permissions: {}
 
 jobs:
-  zizmor:
-    name: Run zizmor
+  lint-workflows:
+    name: Lint GitHub workflows
     runs-on: ubuntu-24.04 # pinned for determinism
     permissions:
       contents: read
