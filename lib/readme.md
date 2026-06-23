@@ -22,142 +22,142 @@
   </p>
   <br />
   <p align="center">
-    <a href="https://www.npmjs.com/package/@ukorvl/swagmi">
-      <picture>
-        <source
-          media="(prefers-color-scheme: dark)"
-          srcset="https://img.shields.io/npm/v/%40ukorvl%2Fswagmi?colorA=22d3ee&colorB=22d3ee&style=flat"
-        >
-        <img
-          src="https://img.shields.io/npm/v/%40ukorvl%2Fswagmi?colorA=a855f7&colorB=a855f7&style=flat"
-          alt="Version"
-        >
-      </picture>
-    </a>
-
-    <a href="https://www.npmjs.com/package/@ukorvl/swagmi">
-      <picture>
-        <source
-          media="(prefers-color-scheme: dark)"
-          srcset="https://img.shields.io/npm/dm/%40ukorvl%2Fswagmi?colorA=22d3ee&colorB=22d3ee&style=flat"
-        >
-        <img
-          src="https://img.shields.io/npm/dm/%40ukorvl%2Fswagmi?colorA=a855f7&colorB=a855f7&style=flat"
-          alt="Downloads"
-        >
-      </picture>
-    </a>
-
-    <a href="https://github.com/ukorvl/swagmi/actions/workflows/build.yaml">
-      <picture>
-        <source
-          media="(prefers-color-scheme: dark)"
-          srcset="https://img.shields.io/github/actions/workflow/status/ukorvl/swagmi/build.yaml?branch=main&colorA=22d3ee&colorB=22d3ee&style=flat"
-        >
-        <img
-          src="https://img.shields.io/github/actions/workflow/status/ukorvl/swagmi/build.yaml?branch=main&colorA=a855f7&colorB=a855f7&style=flat"
-          alt="Build Status"
-        >
-      </picture>
-    </a>
-
-    <a href="https://pkg.pr.new/~/ukorvl/swagmi">
-      <img
-        src="https://pkg.pr.new/badge/ukorvl/swagmi"
-        alt="pkg.pr.new"
+  <a href="https://www.npmjs.com/package/@ukorvl/swagmi">
+    <picture>
+      <source
+        media="(prefers-color-scheme: dark)"
+        srcset="https://img.shields.io/npm/v/%40ukorvl%2Fswagmi?colorA=22d3ee&colorB=22d3ee&style=flat"
       >
-    </a>
+      <img
+        src="https://img.shields.io/npm/v/%40ukorvl%2Fswagmi?colorA=a855f7&colorB=a855f7&style=flat"
+        alt="Version"
+      >
+    </picture>
+  </a>
 
-    <a href="https://github.com/ukorvl/swagmi/blob/main/LICENSE">
-      <picture>
-        <source
-          media="(prefers-color-scheme: dark)"
-          srcset="https://img.shields.io/npm/l/%40ukorvl%2Fswagmi?colorA=22d3ee&colorB=22d3ee&style=flat"
-        >
-        <img
-          src="https://img.shields.io/npm/l/%40ukorvl%2Fswagmi?colorA=a855f7&colorB=a855f7&style=flat"
-          alt="License"
-        >
-      </picture>
-    </a>
+  <a href="https://www.npmjs.com/package/@ukorvl/swagmi">
+    <picture>
+      <source
+        media="(prefers-color-scheme: dark)"
+        srcset="https://img.shields.io/npm/dm/%40ukorvl%2Fswagmi?colorA=22d3ee&colorB=22d3ee&style=flat"
+      >
+      <img
+        src="https://img.shields.io/npm/dm/%40ukorvl%2Fswagmi?colorA=a855f7&colorB=a855f7&style=flat"
+        alt="Downloads"
+      >
+    </picture>
+  </a>
 
-    <a href="https://bundlephobia.com/package/@ukorvl/swagmi">
-      <picture>
-        <source
-          media="(prefers-color-scheme: dark)"
-          srcset="https://img.shields.io/bundlephobia/minzip/%40ukorvl%2Fswagmi?colorA=22d3ee&colorB=22d3ee&style=flat"
-        >
-        <img
-          src="https://img.shields.io/bundlephobia/minzip/%40ukorvl%2Fswagmi?colorA=a855f7&colorB=a855f7&style=flat"
-          alt="Minified size"
-        >
-      </picture>
-    </a>
+  <a href="https://github.com/ukorvl/swagmi/actions/workflows/build.yaml">
+    <picture>
+      <source
+        media="(prefers-color-scheme: dark)"
+        srcset="https://img.shields.io/github/actions/workflow/status/ukorvl/swagmi/build.yaml?branch=main&colorA=22d3ee&colorB=22d3ee&style=flat"
+      >
+      <img
+        src="https://img.shields.io/github/actions/workflow/status/ukorvl/swagmi/build.yaml?branch=main&colorA=a855f7&colorB=a855f7&style=flat"
+        alt="Build Status"
+      >
+    </picture>
+  </a>
 
-    <a href="https://github.com/ukorvl/swagmi">
-      <picture>
-        <source
-          media="(prefers-color-scheme: dark)"
-          srcset="https://img.shields.io/badge/code%20style-eslint-22d3ee?style=flat"
-        >
-        <img
-          src="https://img.shields.io/badge/code%20style-eslint-a855f7?style=flat"
-          alt="Code Style"
-        >
-      </picture>
-    </a>
+  <a href="https://pkg.pr.new/~/ukorvl/swagmi">
+    <img
+      src="https://pkg.pr.new/badge/ukorvl/swagmi"
+      alt="pkg.pr.new"
+    >
+  </a>
 
-    <a href="https://github.com/ukorvl/swagmi">
-      <picture>
-        <source
-          media="(prefers-color-scheme: dark)"
-          srcset="https://img.shields.io/badge/module-ESM--only-22d3ee?style=flat"
-        >
-        <img
-          src="https://img.shields.io/badge/module-ESM--only-a855f7?style=flat"
-          alt="ESM Only"
-        >
-      </picture>
-    </a>
+  <a href="https://github.com/ukorvl/swagmi/blob/main/LICENSE">
+    <picture>
+      <source
+        media="(prefers-color-scheme: dark)"
+        srcset="https://img.shields.io/npm/l/%40ukorvl%2Fswagmi?colorA=22d3ee&colorB=22d3ee&style=flat"
+      >
+      <img
+        src="https://img.shields.io/npm/l/%40ukorvl%2Fswagmi?colorA=a855f7&colorB=a855f7&style=flat"
+        alt="License"
+      >
+    </picture>
+  </a>
 
-    <a href="https://github.com/ukorvl/swagmi">
-      <picture>
-        <source
-          media="(prefers-color-scheme: dark)"
-          srcset="https://img.shields.io/badge/contributions-welcome-22d3ee?style=flat"
-        >
-        <img
-          src="https://img.shields.io/badge/contributions-welcome-a855f7?style=flat"
-          alt="Contributions"
-        >
-      </picture>
-    </a>
+  <a href="https://bundlephobia.com/package/@ukorvl/swagmi">
+    <picture>
+      <source
+        media="(prefers-color-scheme: dark)"
+        srcset="https://img.shields.io/bundlephobia/minzip/%40ukorvl%2Fswagmi?colorA=22d3ee&colorB=22d3ee&style=flat"
+      >
+      <img
+        src="https://img.shields.io/bundlephobia/minzip/%40ukorvl%2Fswagmi?colorA=a855f7&colorB=a855f7&style=flat"
+        alt="Minified size"
+      >
+    </picture>
+  </a>
 
-    <a href="https://coveralls.io/github/ukorvl/swagmi">
-      <picture>
-        <source
-          media="(prefers-color-scheme: dark)"
-          srcset="https://img.shields.io/coveralls/github/ukorvl/swagmi?colorA=22d3ee&colorB=22d3ee&style=flat"
-        >
-        <img
-          src="https://img.shields.io/coveralls/github/ukorvl/swagmi?colorA=a855f7&colorB=a855f7&style=flat"
-          alt="Coverage"
-        >
-      </picture>
-    </a>
+  <a href="https://github.com/ukorvl/swagmi">
+    <picture>
+      <source
+        media="(prefers-color-scheme: dark)"
+        srcset="https://img.shields.io/badge/code%20style-eslint-22d3ee?style=flat"
+      >
+      <img
+        src="https://img.shields.io/badge/code%20style-eslint-a855f7?style=flat"
+        alt="Code Style"
+      >
+    </picture>
+  </a>
 
-    <a href="https://jsr.io/@ukorvl/swagmi">
-      <picture>
-        <source
-          media="(prefers-color-scheme: dark)"
-          srcset="https://img.shields.io/jsr/v/%40ukorvl%2Fswagmi?colorA=22d3ee&colorB=22d3ee&style=flat"
-        >
-        <img
-          src="https://img.shields.io/jsr/v/%40ukorvl%2Fswagmi?colorA=a855f7&colorB=a855f7&style=flat"
-          alt="Jsr version"
-        >
-      </picture>
-    </a>
+  <a href="https://github.com/ukorvl/swagmi">
+    <picture>
+      <source
+        media="(prefers-color-scheme: dark)"
+        srcset="https://img.shields.io/badge/module-ESM--only-22d3ee?style=flat"
+      >
+      <img
+        src="https://img.shields.io/badge/module-ESM--only-a855f7?style=flat"
+        alt="ESM Only"
+      >
+    </picture>
+  </a>
+
+  <a href="https://github.com/ukorvl/swagmi">
+    <picture>
+      <source
+        media="(prefers-color-scheme: dark)"
+        srcset="https://img.shields.io/badge/contributions-welcome-22d3ee?style=flat"
+      >
+      <img
+        src="https://img.shields.io/badge/contributions-welcome-a855f7?style=flat"
+        alt="Contributions"
+      >
+    </picture>
+  </a>
+
+  <a href="https://coveralls.io/github/ukorvl/swagmi">
+    <picture>
+      <source
+        media="(prefers-color-scheme: dark)"
+        srcset="https://img.shields.io/coveralls/github/ukorvl/swagmi?colorA=22d3ee&colorB=22d3ee&style=flat"
+      >
+      <img
+        src="https://img.shields.io/coveralls/github/ukorvl/swagmi?colorA=a855f7&colorB=a855f7&style=flat"
+        alt="Coverage"
+      >
+    </picture>
+  </a>
+
+  <a href="https://jsr.io/@ukorvl/swagmi">
+    <picture>
+      <source
+        media="(prefers-color-scheme: dark)"
+        srcset="https://img.shields.io/jsr/v/%40ukorvl%2Fswagmi?colorA=22d3ee&colorB=22d3ee&style=flat"
+      >
+      <img
+        src="https://img.shields.io/jsr/v/%40ukorvl%2Fswagmi?colorA=a855f7&colorB=a855f7&style=flat"
+        alt="Jsr version"
+      >
+    </picture>
+  </a>
 
   </p>
 </div>
@@ -165,16 +165,16 @@
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [About](#about)
+- [Overview](#overview)
 - [Installation](#installation)
 - [Basic usage](#basic-usage)
 - [Advanced examples](#advanced-examples)
-- [Skills](#skills)
+- [Skills 🤖](#skills-)
 - [Contributing](#contributing)
 - [Security](#security)
 - [License](#license)
 
-## About
+## Overview
 
 ## Installation
 
@@ -182,7 +182,27 @@
 
 ## Advanced examples
 
-## Skills
+## Skills 🤖
+
+This repo ships optional agent skills for consumer projects. Skills are agent guidance, not npm packages, so install the library and the skill separately.
+
+Install the library in your app:
+
+```sh
+pnpm add @ukorvl/swagmi wagmi viem @tanstack/react-query
+```
+
+Install the `swagmi-basic-usage` skill from this repo into Codex:
+
+```sh
+python3 "${CODEX_HOME:-$HOME/.codex}/skills/.system/skill-installer/scripts/install-skill-from-github.py" \
+  --repo ukorvl/swagmi \
+  --path skills/swagmi-basic-usage
+```
+
+Current skills:
+
+- [`swagmi-basic-usage`](../skills/swagmi-basic-usage/SKILL.md) - help the agent to use the library in a
 
 ## Contributing
 
@@ -191,3 +211,5 @@
 ## License
 
 [MIT](./LICENSE)
+
+This project is licensed under the [MIT License](./LICENSE). You can freely use, modify, and distribute this template as per the terms of the license.

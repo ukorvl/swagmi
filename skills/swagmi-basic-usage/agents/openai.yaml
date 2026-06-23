@@ -1,0 +1,4 @@
+interface:
+  display_name: "swagmi Basic Usage"
+  short_description: "Guide general @ukorvl/swagmi usage"
+  default_prompt: "Use $swagmi-basic-usage to help integrate @ukorvl/swagmi into this app."
