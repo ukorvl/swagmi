@@ -184,7 +184,7 @@
 
 ## Skills 🤖
 
-This repo ships optional agent skills for consumer projects. Skills are agent guidance, not npm packages, so install the library and the skill separately.
+This repo ships agent skills for consumer projects. Skills are agent guidance, not npm packages, so install the library and the skill separately.
 
 Install the library in your app:
 
@@ -192,17 +192,15 @@ Install the library in your app:
 pnpm add @ukorvl/swagmi wagmi viem @tanstack/react-query
 ```
 
-Install the `swagmi-basic-usage` skill from this repo into Codex:
+Install the `swagmi-basic-usage` skill from this repo in your consumer project's root:
 
 ```sh
-python3 "${CODEX_HOME:-$HOME/.codex}/skills/.system/skill-installer/scripts/install-skill-from-github.py" \
-  --repo ukorvl/swagmi \
-  --path skills/swagmi-basic-usage
+npx skills add https://github.com/ukorvl/swagmi/tree/main/skills/swagmi-basic-usage
 ```
 
 Current skills:
 
-- [`swagmi-basic-usage`](../skills/swagmi-basic-usage/SKILL.md) - help the agent to use the library in a
+- [`swagmi-basic-usage`](../skills/swagmi-basic-usage/SKILL.md) - pre-release template for safe, minimal `@ukorvl/swagmi` integration guidance in consumer apps. It basically provides an agent with guardrails for writing clean and safe code in your app.
 
 ## Contributing
 
