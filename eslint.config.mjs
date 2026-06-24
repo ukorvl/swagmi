@@ -50,7 +50,11 @@ const importResolverProjects = [
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  gitignore({ recursive: true }),
+  gitignore({
+    recursive: {
+      skipDirs: ["build", "coverage", "dist"],
+    },
+  }),
   {
     files: allJsonFiles,
     languageOptions: {

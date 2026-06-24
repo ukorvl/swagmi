@@ -25,8 +25,9 @@ const prependEntryBannerPlugin = (options: PrependEntryBannerPluginOptions): Plu
   const banner = createLicenseBanner(options);
 
   return {
+    // eslint-disable-next-line sonarjs/function-return-type
     renderChunk: (code, chunk) => {
-      if (!chunk.isEntry || code.startsWith(banner)) return null;
+      if (!chunk.isEntry || code?.startsWith(banner)) return null;
 
       const magicString = new MagicString(code);
       magicString.prepend(`${banner}\n`);

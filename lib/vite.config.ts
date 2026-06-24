@@ -10,7 +10,12 @@ import { prependEntryBannerPlugin } from "./vite/plugins/prepend-entry-banner";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const packageName = packageJson.name;
-const packageFileBaseName = packageName.split("/").at(-1) ?? packageName;
+const packageFileBaseName = packageName?.split("/").at(-1) ?? packageName;
+
+if (!packageName) {
+  throw new Error("Missing package name in package.json");
+}
+
 const packageVersion = packageJson.version;
 const packageLicense = packageJson.license;
 const packageDependencies = (
@@ -58,7 +63,7 @@ export default defineConfig(() => {
           externalPackages.some(
             externalPackage =>
               identifier === externalPackage ||
-              identifier.startsWith(`${externalPackage}/`)
+              identifier?.startsWith(`${externalPackage}/`)
           ),
       },
     },
