@@ -1,7 +1,11 @@
 {
   "exports": "./src/index.ts",
   "imports": {
-    "@/": "./src/"
+    "react": "npm:react@^19.2.7",
+    "viem": "npm:viem@^2.52.2",
+    "wagmi": "npm:wagmi@^3.6.16",
+    "@/": "./src/",
+    "@tanstack/react-query": "npm:@tanstack/react-query@^5.101.0"
   },
   "license": "MIT",
   "name": "@ukorvl/swagmi",
