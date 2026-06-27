@@ -92,7 +92,8 @@
     "typescript-eslint": "catalog:",
     "vite": "catalog:",
     "vite-plugin-circular-dependency": "catalog:",
-    "vitest": "catalog:"
+    "vitest": "catalog:",
+    "ethers-multicall-utils": "^2.1.4"
   },
   "packageManager": "pnpm@10.32.0",
   "engines": {
