@@ -79,8 +79,8 @@ catalogs:
       specifier: 4.0.1
       version: 4.0.1
     eslint-plugin-sonarjs:
-      specifier: 4.0.3
-      version: 4.0.3
+      specifier: 4.1.0
+      version: 4.1.0
     eslint-plugin-unicorn:
       specifier: 64.0.0
       version: 64.0.0
@@ -241,7 +241,7 @@ importers:
         version: 4.0.1
       eslint-plugin-sonarjs:
         specifier: 'catalog:'
-        version: 4.0.3(eslint@9.39.4(jiti@2.7.0))
+        version: 4.1.0(eslint@9.39.4(jiti@2.7.0))
       eslint-plugin-unicorn:
         specifier: 'catalog:'
         version: 64.0.0(eslint@9.39.4(jiti@2.7.0))
@@ -3280,8 +3280,8 @@ packages:
     resolution: {integrity: sha512-/lZCkOxPOWaf1jXAqgICrS8St3BMBccIPvhOSUYuV6VCr1o5nFVG998FnTLt6w2Nxb8Uo0nM8fzmnhp+GY/aEg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  eslint-plugin-sonarjs@4.0.3:
-    resolution: {integrity: sha512-5drkJKLC9qQddIiaATV0e8+ygbUc7b0Ti6VB7M2d3jmKNh3X0RaiIJYTs3dr9xnlhlrxo+/s1FoO3Jgv6O/c7g==}
+  eslint-plugin-sonarjs@4.1.0:
+    resolution: {integrity: sha512-rh+FlVz0yfd2RNIb6WqSkuGh0addX/Qi5scwQ5FphXDFrM6fZKcxP1+attJ78yUKcyYfiu6MTaISPpAFPzqRJw==}
     peerDependencies:
       eslint: ^8.0.0 || ^9.0.0 || ^10.0.0
 
@@ -3535,6 +3535,10 @@ packages:
 
   globals@14.0.0:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
+    engines: {node: '>=18'}
+
+  globals@17.7.0:
+    resolution: {integrity: sha512-Czmyns5dUsq4seFBR/Kdydhmo8y9kC79hiSkPn0YcGtNnYWnrgt0vjrSjx9tspoDGWm2CMarffRuLjM4xUz8xg==}
     engines: {node: '>=18'}
 
   globals@17.7.0:
@@ -4813,6 +4817,11 @@ packages:
 
   semver@7.7.4:
     resolution: {integrity: sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA==}
+    engines: {node: '>=10'}
+    hasBin: true
+
+  semver@7.8.5:
+    resolution: {integrity: sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -8292,7 +8301,7 @@ snapshots:
     dependencies:
       safe-regex: 2.1.1
 
-  eslint-plugin-sonarjs@4.0.3(eslint@9.39.4(jiti@2.7.0)):
+  eslint-plugin-sonarjs@4.1.0(eslint@9.39.4(jiti@2.7.0)):
     dependencies:
       '@eslint-community/regexpp': 4.12.2
       builtin-modules: 3.3.0
@@ -8304,9 +8313,10 @@ snapshots:
       lodash.merge: 4.6.2
       minimatch: 10.2.5
       scslre: 0.3.0
-      semver: 7.7.4
+      semver: 7.8.5
       ts-api-utils: 2.5.0(typescript@6.0.3)
       typescript: 6.0.3
+      yaml: 2.9.0
 
   eslint-plugin-unicorn@64.0.0(eslint@9.39.4(jiti@2.7.0)):
     dependencies:
@@ -8601,6 +8611,8 @@ snapshots:
       ini: 6.0.0
 
   globals@14.0.0: {}
+
+  globals@17.7.0: {}
 
   globals@17.7.0: {}
 
@@ -10238,6 +10250,8 @@ snapshots:
       lru-cache: 6.0.0
 
   semver@7.7.4: {}
+
+  semver@7.8.5: {}
 
   set-function-length@1.2.2:
     dependencies:
