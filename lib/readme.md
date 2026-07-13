@@ -13,12 +13,12 @@
     />
   </picture>
   <p>
-    Have you ever copied your custom React hooks built on top of <a href="https://wagmi.sh">wagmi</a> from one web3 project to another? Have you ever struggled with allowance handling or preventing your dApp from showing the wrong state after a transaction is signed? That shared pain deserves a shared abstraction.
+    GM! Have you ever copied your custom React hooks built on top of <a href="https://wagmi.sh">wagmi</a> from one web3 project to another? 
   </p>
   <br />
   <p>
     The goal of this project is simple: to provide a useful abstraction layer on top of <a href="https://wagmi.sh">wagmi</a> that makes advanced dApp workflows easier and faster to build with React hooks.
-    It provides a set of hooks that can be used to handle common edge cases in web3 development, protecting developers from the imperative complexity behind the shiny surface of declarative abstraction.
+    It contains a set of hooks that can be used to handle common edge cases in web3 development, protecting developers from the imperative complexity behind the shiny surface of declarative abstraction.
   </p>
   <br />
   <p align="center">

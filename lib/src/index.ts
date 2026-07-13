@@ -5,3 +5,8 @@ export {
   type UseSmartWriteContractParameters,
   type UseSmartWriteContractReturnType,
 } from "./useSmartWriteContract";
+export {
+  useWalletSession,
+  type UseWalletSessionParameters,
+  type WalletSessionState,
+} from "./useWalletSession";
