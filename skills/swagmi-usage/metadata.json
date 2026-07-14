@@ -1,0 +1,18 @@
+{
+  "abstract": "General guidance for integrating @ukorvl/swagmi into consumer apps, including installation, peer dependency setup, wallet session handling, and replacing manual wagmi transaction flows with project hooks.",
+  "organization": "ukorvl",
+  "packageName": "@ukorvl/swagmi",
+  "peerDependencies": {
+    "react": ">=18 <20",
+    "viem": ">=2 <3",
+    "wagmi": ">=3.0.0 <4",
+    "@tanstack/react-query": ">=5.0.0 <6"
+  },
+  "references": [
+    "https://github.com/ukorvl/swagmi",
+    "https://www.npmjs.com/package/@ukorvl/swagmi",
+    "https://jsr.io/@ukorvl/swagmi"
+  ],
+  "skillName": "swagmi-usage",
+  "version": "1.0.0"
+}
