@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { useSmartWriteContract, useWalletSession } from "./index";
+import { useSmartWriteContract, useTransactionFlow, useWalletSession } from "./index";
 
 describe("library smoke", () => {
   it("exports useSmartWriteContract", () => {
@@ -9,5 +9,9 @@ describe("library smoke", () => {
 
   it("exports useWalletSession", () => {
     expect(typeof useWalletSession).toBe("function");
+  });
+
+  it("exports useTransactionFlow", () => {
+    expect(typeof useTransactionFlow).toBe("function");
   });
 });

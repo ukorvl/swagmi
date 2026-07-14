@@ -1,7 +1,4 @@
 # Example CODEOWNERS file.
 # Replace these examples with real owners before enabling branch protection.
 
-# * @your-org/team
-# /lib @your-org/lib-maintainers
-# /docs @your-org/docs-maintainers
-# /example @your-org/example-maintainers
+* @ukorvl

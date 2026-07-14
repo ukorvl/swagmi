@@ -136,6 +136,7 @@ const getConfigParameter = <TConfig extends Config>(
   return { config: nextConfig };
 };
 
+// eslint-disable-next-line sonarjs/function-return-type
 const getDecodedError = (error: BaseError): SmartWriteContractDecodedError | null => {
   const revertedError = error.walk(
     nestedError => nestedError instanceof ContractFunctionRevertedError
@@ -154,6 +155,7 @@ const getDecodedError = (error: BaseError): SmartWriteContractDecodedError | nul
   };
 };
 
+// eslint-disable-next-line sonarjs/function-return-type
 const getUserRejectedError = (error: BaseError): UserRejectedRequestError | null => {
   const rejectedError = error.walk(
     nestedError => nestedError instanceof UserRejectedRequestError

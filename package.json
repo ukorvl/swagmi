@@ -16,6 +16,7 @@
     "dev": "node ./scripts/prebuild-lib-if-needed.mjs && pnpm -r --parallel --stream --filter ./lib --filter ./docs --filter ./example run dev",
     "format": "prettier --check \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml,sh}\"",
     "format:fix": "prettier --write \"**/*.{js,ts,jsx,tsx,json,md,yaml,yml,sh}\"",
+    "preinstall": "npx only-allow pnpm",
     "install-git-hooks": "pnpm exec simple-git-hooks",
     "knip": "knip --cache --production",
     "lint": "node ./scripts/prebuild-lib-if-needed.mjs && eslint --cache --ext .ts,.tsx,.js,.jsx,.mjs,.cjs,.json .",

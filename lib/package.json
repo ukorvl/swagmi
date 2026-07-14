@@ -60,10 +60,10 @@
     "wagmi": "catalog:"
   },
   "peerDependencies": {
-    "@tanstack/react-query": ">=5.0.0",
-    "react": ">=18",
-    "viem": "2.x",
-    "wagmi": ">=3.0.0"
+    "@tanstack/react-query": ">=5.0.0 <6",
+    "react": ">=18 <20",
+    "viem": ">=2 <3",
+    "wagmi": ">=3.0.0 <4"
   },
   "publishConfig": {
     "access": "public",

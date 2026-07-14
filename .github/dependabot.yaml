@@ -13,6 +13,20 @@ updates:
     cooldown:
       default-days: 7
     ignore:
+      # Keep these explicit so the upgrade policy for the core React/web3 stack
+      # stays visible even if the broader major-update rule changes later.
+      - dependency-name: "react"
+        update-types:
+          - "version-update:semver-major"
+      - dependency-name: "react-dom"
+        update-types:
+          - "version-update:semver-major"
+      - dependency-name: "wagmi"
+        update-types:
+          - "version-update:semver-major"
+      - dependency-name: "viem"
+        update-types:
+          - "version-update:semver-major"
       - dependency-name: "*"
         update-types:
           - "version-update:semver-major"
