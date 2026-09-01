@@ -94,8 +94,8 @@ catalogs:
       specifier: 29.1.1
       version: 29.1.1
     jsonc-eslint-parser:
-      specifier: 3.1.0
-      version: 3.1.0
+      specifier: 3.3.0
+      version: 3.3.0
     knip:
       specifier: 6.20.0
       version: 6.20.0
@@ -226,7 +226,7 @@ importers:
         version: 2.3.3(eslint@9.39.4(jiti@2.7.0))
       eslint-plugin-package-json:
         specifier: 'catalog:'
-        version: 0.91.2(@types/estree@1.0.8)(eslint@9.39.4(jiti@2.7.0))(jsonc-eslint-parser@3.1.0)
+        version: 0.91.2(@types/estree@1.0.8)(eslint@9.39.4(jiti@2.7.0))(jsonc-eslint-parser@3.3.0)
       eslint-plugin-perfectionist:
         specifier: 'catalog:'
         version: 5.10.0(eslint@9.39.4(jiti@2.7.0))(typescript@5.9.3)
@@ -253,7 +253,7 @@ importers:
         version: 17.7.0
       jsonc-eslint-parser:
         specifier: 'catalog:'
-        version: 3.1.0
+        version: 3.3.0
       knip:
         specifier: 'catalog:'
         version: 6.20.0
@@ -3948,8 +3948,8 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
-  jsonc-eslint-parser@3.1.0:
-    resolution: {integrity: sha512-75EA7EWZExL/j+MDKQrRbdzcRI2HOkRlmUw8fZJc1ioqFEOvBsq7Rt+A6yCxOt9w/TYNpkt52gC6nm/g5tFIng==}
+  jsonc-eslint-parser@3.3.0:
+    resolution: {integrity: sha512-hYTGkHGNRZnXOFZ1urhINADoqDrGfpy53cjw+dxk84QE0pUDujQzeUeamNs6Mz44/TKD49z2x6/GVSu4ZrtA+Q==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
 
   jsonc-parser@3.3.1:
@@ -5364,6 +5364,10 @@ packages:
   validate-npm-package-name@7.0.2:
     resolution: {integrity: sha512-hVDIBwsRruT73PbK7uP5ebUt+ezEtCmzZz3F59BSr2F6OVFnJ/6h8liuvdLrQ88Xmnk6/+xGGuq+pG9WwTuy3A==}
     engines: {node: ^20.17.0 || >=22.9.0}
+
+  verkit@0.3.2:
+    resolution: {integrity: sha512-zj/ob3UsvJGN0whEAKFp53REA5X66hvffVqoCtVQAakJKnKlH+/PcOfMoFwIG/o4rElqLv/ycAFlx8ZlXUorCg==}
+    engines: {node: '>=18.12.0'}
 
   vfile-message@4.0.3:
     resolution: {integrity: sha512-QTHzsGd1EhbZs4AsQ20JX1rC3cOlt/IWJruk893DfLRr57lcnOeMaWG4K0JrRta4mIJZKth2Au3mM3u03/JWKw==}
@@ -8332,7 +8336,7 @@ snapshots:
     dependencies:
       eslint: 9.39.4(jiti@2.7.0)
 
-  eslint-plugin-package-json@0.91.2(@types/estree@1.0.8)(eslint@9.39.4(jiti@2.7.0))(jsonc-eslint-parser@3.1.0):
+  eslint-plugin-package-json@0.91.2(@types/estree@1.0.8)(eslint@9.39.4(jiti@2.7.0))(jsonc-eslint-parser@3.3.0):
     dependencies:
       '@altano/repository-tools': 2.0.1
       change-case: 5.4.4
@@ -8340,7 +8344,7 @@ snapshots:
       detect-newline: 4.0.1
       eslint: 9.39.4(jiti@2.7.0)
       eslint-fix-utils: 0.4.2(@types/estree@1.0.8)(eslint@9.39.4(jiti@2.7.0))
-      jsonc-eslint-parser: 3.1.0
+      jsonc-eslint-parser: 3.3.0
       package-json-validator: 1.5.1
       semver: 7.7.4
       sort-object-keys: 2.1.0
@@ -9045,11 +9049,11 @@ snapshots:
 
   json5@2.2.3: {}
 
-  jsonc-eslint-parser@3.1.0:
+  jsonc-eslint-parser@3.3.0:
     dependencies:
       acorn: 8.16.0
       eslint-visitor-keys: 5.0.1
-      semver: 7.7.4
+      verkit: 0.3.2
 
   jsonc-parser@3.3.1: {}
 
@@ -10918,6 +10922,8 @@ snapshots:
   validate-npm-package-name@5.0.1: {}
 
   validate-npm-package-name@7.0.2: {}
+
+  verkit@0.3.2: {}
 
   vfile-message@4.0.3:
     dependencies:

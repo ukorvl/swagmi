@@ -36,7 +36,7 @@ catalog:
   "knip": "6.20.0"
   "lint-staged": "16.4.0"
   "magic-string": "0.30.21"
-  "jsonc-eslint-parser": "3.1.0"
+  "jsonc-eslint-parser": "3.3.0"
   "prettier": "3.8.4"
   "prettier-plugin-multiline-arrays": "4.1.9"
   "prettier-plugin-packagejson": "3.0.2"
